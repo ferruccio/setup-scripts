@@ -23,7 +23,7 @@ sudo apt install -y libssl-dev subversion htop
 curl --proto '=https' --tlsv1.2 -sSf -q https://sh.rustup.rs | sh -s -- -y
 source $HOME/.cargo/env
 
-cargo install --target-dir=/tmp/target starship just
+cargo install --target-dir=/tmp/target starship just mcfly
 
 # install nvm
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
