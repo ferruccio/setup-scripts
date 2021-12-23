@@ -17,7 +17,9 @@ export PATH="\$DENO_INSTALL/bin:\$PATH"
 EOF
 
 # install dependencies and tools
-sudo apt install -y libssl-dev subversion htop
+sudo apt install -y libssl-dev subversion htop docker.io
+
+sudo usermod -aG docker $USER
 
 # install Rust, Cargo plugins & tools
 curl --proto '=https' --tlsv1.2 -sSf -q https://sh.rustup.rs | sh -s -- -y
