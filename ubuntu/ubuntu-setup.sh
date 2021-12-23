@@ -2,6 +2,8 @@
 
 set -x
 
+mkdir ~/tmp && cd $_
+
 sudo apt update -y
 sudo apt upgrade -y
 
