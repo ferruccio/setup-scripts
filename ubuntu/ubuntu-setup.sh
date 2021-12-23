@@ -52,9 +52,9 @@ just --completions bash >~/bin/just-completions.sh
 wget https://dot.net/v1/dotnet-install.sh
 chmod +x dotnet-install.sh
 ./dotnet-install.sh -c 6.0
-cat >>.profile <<EOF
+cat >>~/.profile <<EOF
 # add .NET to path
-export PATH="/home/fgb/.dotnet:\$PATH"
+export PATH="\$HOME/.dotnet:\$PATH"
 EOF
 source ~/.profile
 
