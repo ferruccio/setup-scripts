@@ -19,12 +19,12 @@ curl --proto '=https' --tlsv1.2 -sSf -q https://sh.rustup.rs | sh -s -- -y
 source $HOME/.cargo/env
 
 cargo install --target-dir=/tmp/target \
-    cargo-audit cargo-edit cargo-outdated cargo-deny cargo-update
-cargo install --target-dir=/tmp/target  \
+    cargo-audit cargo-edit cargo-outdated cargo-deny cargo-update \
     ripgrep exa bat fd-find git-delta starship just mcfly mdbook onefetch
 
 # install nvm, node & npm
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+source ~/.bashrc
 nvm install 14
 nvm install-latest-npm
 
