@@ -6,6 +6,8 @@ alias l.='exa -a | rg "^\."'
 
 alias ..='cd ..'
 alias ...='cd ../..'
+alias paths='echo $PATH | tr : \\n'
+
 alias cls="clear && printf '\e[3J'"
 
 alias cp='cp -i'
