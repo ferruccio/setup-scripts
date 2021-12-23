@@ -22,16 +22,10 @@ sudo apt install -y libssl-dev subversion htop
 curl --proto '=https' --tlsv1.2 -sSf -q https://sh.rustup.rs | sh -s -- -y
 source $HOME/.cargo/env
 
-cargo install --target-dir=/tmp/target \
-    cargo-audit cargo-edit cargo-outdated cargo-deny cargo-update \
-    ripgrep exa bat fd-find git-delta starship just mcfly mdbook onefetch
+cargo install --target-dir=/tmp/target starship just
 
-# install nvm, node & npm
-curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh -o install.sh
-source install.sh
-source ~/.bashrc
-nvm install 14
-nvm install-latest-npm
+# install nvm
+curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 
 # install AWS CLI
 curl https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip -o awscliv2.zip
@@ -49,16 +43,6 @@ popd
 # generate completions
 starship completions bash >~/bin/starship-completions.sh
 just --completions bash >~/bin/just-completions.sh
-
-# install .NET
-wget https://dot.net/v1/dotnet-install.sh
-chmod +x dotnet-install.sh
-./dotnet-install.sh -c 6.0
-cat >>~/.profile <<EOF
-# add .NET to path
-export PATH="\$HOME/.dotnet:\$PATH"
-EOF
-source ~/.profile
 
 # configure AWS
 aws configure
