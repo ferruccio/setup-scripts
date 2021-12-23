@@ -27,23 +27,21 @@ cargo install --target-dir=/tmp/target \
     ripgrep exa bat fd-find git-delta starship just mcfly mdbook onefetch
 
 # install nvm, node & npm
-curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh -o install.sh
+source install.sh
 source ~/.bashrc
 nvm install 14
 nvm install-latest-npm
 
 # install AWS CLI
-pushd /tmp
-curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+curl https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip -o awscliv2.zip
 unzip awscliv2.zip
 sudo ./aws/install
-popd
 
 # build fast from source
 mkdir ~/bin
-pushd /tmp
 git clone https://github.com/ferruccio/fast.git
-cd fast
+pushd fast
 cargo build --release
 cp ./target/release/fast ~/bin
 popd
