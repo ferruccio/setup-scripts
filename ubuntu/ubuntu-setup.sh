@@ -2,10 +2,11 @@
 
 set -x
 
-mkdir ~/tmp && cd $_
+mkdir ~/tmp && pushd $_
 
 sudo apt update -y
 sudo apt upgrade -y
+sudo apt dist-upgrade -y
 
 # install Deno
 curl -fsSL https://deno.land/x/install/install.sh | sh
@@ -47,6 +48,8 @@ just --completions bash >~/bin/just-completions.sh
 # configure AWS
 aws configure
 fast ~/.aws/credentials git
+
+popd
 
 # update .bashrc
 cat .bashrc >>~/.bashrc
