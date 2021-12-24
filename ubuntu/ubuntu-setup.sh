@@ -66,13 +66,18 @@ popd
 cat .bashrc >>~/.bashrc
 
 # create .gitconfig
-cat .gitconfig >~/.gitconfig
+\cp .gitconfig ~
 
 # create .bash_aliases
-cat .bash_aliases >~/.bash_aliases
+\cp .bash_aliases ~
 
 # create .config/starship.toml
-cat starship.toml >~/.config/starship.toml
+mkdir -p ~/.config
+\cp starship.toml ~/.config
+
+# create .omnisharp/omnisharp.json
+mkdir -p ~/.omnisharp
+\cp omnisharp.json ~/.omnisharp
 
 cat <<EOF
 
