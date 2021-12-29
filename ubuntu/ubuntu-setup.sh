@@ -10,7 +10,7 @@ sudo apt dist-upgrade -y
 
 # install dependencies and tools
 sudo apt install -y libssl-dev subversion htop \
-    docker.io docker-compose postgresql-client-13
+    docker.io docker-compose postgresql-client-13 jq xclip
 
 sudo usermod -aG docker $USER
 
