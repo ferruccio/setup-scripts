@@ -10,9 +10,12 @@ sudo apt dist-upgrade -y
 
 # install dependencies and tools
 sudo apt install -y libssl-dev subversion htop \
-    docker.io docker-compose postgresql-client-13 jq xclip
+    docker.io docker-compose postgresql-client-13 jq xclip \
+    python3-pip
 
 sudo usermod -aG docker $USER
+
+pip install awslogs
 
 # install AWS CLI
 curl https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip -o awscliv2.zip
