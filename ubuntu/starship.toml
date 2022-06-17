@@ -6,3 +6,25 @@ error_symbol = "[\\$](bold red)"
 
 [aws]
 disabled = true
+
+[directory]
+truncation_symbol = "⋯ /"
+
+[git_branch]
+truncation_length = 20
+
+[git_commit]
+tag_disabled = false
+commit_hash_length = 7
+disabled = false
+
+[memory_usage]
+format = "using [$ram_pct RAM]($style) "
+disabled = false
+
+[package]
+disabled = false
+
+[status]
+format = "[$common_meaning $status]($style) "
+disabled = false
