@@ -35,13 +35,7 @@ cargo install --target-dir=/tmp/target \
     cargo-audit cargo-edit cargo-outdated cargo-deny cargo-update \
     ripgrep exa bat fd-find difftastic mdbook onefetch
 
-# build fast from source (cargo install fails for some reason)
-mkdir ~/bin
-git clone https://github.com/ferruccio/fast.git
-pushd fast
-cargo build --release
-cp ./target/release/fast ~/bin
-popd
+cargo install --target-dir=/tmp/target --git https://github.com/ferruccio/fast.git
 
 # generate bash completion scripts
 starship completions bash >~/bin/starship-completions.sh

@@ -1,5 +1,5 @@
 
-fast ~/.aws/credentials git >/dev/null
+fast ~/.aws/credentials git
 
 eval "$(mcfly init bash)"
 eval "$(starship init bash)"
