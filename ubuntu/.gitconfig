@@ -2,10 +2,6 @@
 	email = ferruccio.barletta@gmail.com
 	name = Ferruccio Barletta
 
-[credential]
-	helper = !aws --profile git codecommit credential-helper $@
-	UseHttpPath = true
-
 [diff]
 	external = difft
 

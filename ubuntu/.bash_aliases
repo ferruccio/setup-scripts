@@ -17,5 +17,7 @@ alias rm='rm -i'
 alias mv='mv -i'
 
 alias gls='git log --oneline -n 20 && git status -s'
+alias ggo='git remote show origin'
+alias gso='git remote set-url origin'
 
 alias myip='curl ifconfig.me -w "\n"'

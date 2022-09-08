@@ -15,6 +15,7 @@ sudo apt install -y libssl-dev subversion htop \
 
 sudo usermod -aG docker $USER
 
+pip install git-remote-codecommit
 pip install awslogs
 
 # install AWS CLI
@@ -34,8 +35,6 @@ cargo install --target-dir=/tmp/target starship just mcfly
 cargo install --target-dir=/tmp/target \
     cargo-audit cargo-edit cargo-outdated cargo-deny cargo-update \
     ripgrep exa bat fd-find difftastic mdbook onefetch
-
-cargo install --target-dir=/tmp/target --git https://github.com/ferruccio/fast.git
 
 # generate bash completion scripts
 starship completions bash >~/bin/starship-completions.sh

@@ -1,8 +1,3 @@
-
-if test `find ~/.aws/credentials -mmin +600`; then
-    fast ~/.aws/credentials git
-fi
-
 eval "$(mcfly init bash)"
 eval "$(starship init bash)"
 
