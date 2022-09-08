@@ -11,7 +11,7 @@ sudo apt dist-upgrade -y
 # install dependencies and tools
 sudo apt install -y libssl-dev subversion htop \
     docker.io docker-compose postgresql-client-13 jq xclip \
-    python3-pip
+    python3-pip dotnet6
 
 sudo usermod -aG docker $USER
 
@@ -39,15 +39,6 @@ cargo install --target-dir=/tmp/target \
 # generate bash completion scripts
 starship completions bash >~/bin/starship-completions.sh
 just --completions bash >~/bin/just-completions.sh
-
-# install .NET
-wget https://dot.net/v1/dotnet-install.sh
-chmod +x dotnet-install.sh
-./dotnet-install.sh -c 6.0
-cat >>~/.profile <<EOF
-# add .NET to path
-export PATH="\$HOME/.dotnet:\$PATH"
-EOF
 
 # install Deno
 curl -fsSL https://deno.land/x/install/install.sh | sh
