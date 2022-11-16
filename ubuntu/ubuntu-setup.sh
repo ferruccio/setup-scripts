@@ -34,7 +34,8 @@ cargo install --target-dir=/tmp/target starship just mcfly
 
 cargo install --target-dir=/tmp/target \
     cargo-audit cargo-edit cargo-outdated cargo-deny cargo-update \
-    ripgrep exa bat fd-find difftastic mdbook onefetch
+    cargo-lambda wasm-bindgen-cli wasm-pack \
+    ripgrep ripgrep_all exa bat fd-find difftastic mdbook onefetch
 
 # generate bash completion scripts
 starship completions bash >~/bin/starship-completions.sh
@@ -63,9 +64,13 @@ cat .bashrc >>~/.bashrc
 mkdir -p ~/.config
 \cp starship.toml ~/.config
 
+# create .editorconfig
+\cp .editorconfig ~/.editorconfig
+
+# no longer cromulent; replaced by .editorconfig
 # create .omnisharp/omnisharp.json
-mkdir -p ~/.omnisharp
-\cp omnisharp.json ~/.omnisharp
+#mkdir -p ~/.omnisharp
+#\cp omnisharp.json ~/.omnisharp
 
 cat <<EOF
 
