@@ -1,7 +1,7 @@
-alias l='exa --across --group-directories-first'
-alias ls='exa -a --group-directories-first'
-alias la='exa -al --group-directories-first'
-alias ll='exa -l --group-directories-first'
+alias ls='exa --time-style=long-iso --group-directories-first --icons --no-permissions --no-user'
+alias l='ls'
+alias la='exa --time-style=long-iso --group-directories-first --icons --no-permissions --no-user -al'
+alias ll='exa --time-style=long-iso --group-directories-first --icons --no-permissions --no-user -l'
 alias l.='exa -a | rg "^\."'
 
 alias ..='cd ..'
@@ -21,6 +21,8 @@ alias ggo='git remote show origin'
 alias gso='git remote set-url origin'
 
 alias myip='curl ifconfig.me -w "\n"'
+
+alias ut='~/UrbanTerror43/Quake3-UrT.x86_64 +exec autoexec.cfg |& utcolor'
 
 title() {
     printf "\e]2;$*\a"
