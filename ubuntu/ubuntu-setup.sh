@@ -11,7 +11,7 @@ sudo apt dist-upgrade -y
 # install dependencies and tools
 sudo apt install -y libssl-dev subversion htop \
     docker.io docker-compose postgresql-client-13 jq xclip \
-    python3-pip dotnet6 cmake
+    python3-pip dotnet6 cmake libmagic-dev
 
 sudo usermod -aG docker $USER
 
