@@ -1,0 +1,9 @@
+
+[net]
+git-fetch-with-cli = true
+
+[build]
+rustc-wrapper = "/home/fgb/.cargo/bin/sccache"
+
+[registries.crates-io]
+protocol = "sparse"

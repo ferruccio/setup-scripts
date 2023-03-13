@@ -27,7 +27,7 @@ sudo ./aws/install
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 
 # install Rust, Cargo plugins & tools
-curl --proto '=https' --tlsv1.2 -sSf -q https://sh.rustup.rs | sh -s -- -y
+which rustc || curl --proto '=https' --tlsv1.2 -sSf -q https://sh.rustup.rs | sh -s -- -y
 source $HOME/.cargo/env
 
 cargo install --target-dir=/tmp/target starship just mcfly
@@ -35,7 +35,7 @@ cargo install --target-dir=/tmp/target starship just mcfly
 cargo install --target-dir=/tmp/target \
     cargo-audit cargo-edit cargo-outdated cargo-deny cargo-update \
     cargo-lambda wasm-bindgen-cli wasm-pack \
-    ripgrep ripgrep_all exa bat fd-find difftastic mdbook onefetch
+    ripgrep ripgrep_all exa bat fd-find difftastic mdbook onefetch jql sccache
 
 # generate bash completion scripts
 starship completions bash >~/bin/starship-completions.sh
@@ -66,6 +66,9 @@ mkdir -p ~/.config
 
 # create .editorconfig
 \cp .editorconfig ~/.editorconfig
+
+# create .cargo/config.toml
+\cp config.toml ~/.cargo/config.toml
 
 # no longer cromulent; replaced by .editorconfig
 # create .omnisharp/omnisharp.json
