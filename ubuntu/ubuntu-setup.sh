@@ -11,12 +11,11 @@ sudo apt dist-upgrade -y
 # install dependencies and tools
 sudo apt install -y libssl-dev subversion htop \
     docker.io docker-compose postgresql-client-13 jq xclip \
-    python3-pip dotnet6
+    python3-pip dotnet6 cmake
 
 sudo usermod -aG docker $USER
 
 pip install git-remote-codecommit
-pip install awslogs
 
 # install AWS CLI
 curl https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip -o awscliv2.zip
@@ -35,11 +34,16 @@ cargo install --target-dir=/tmp/target starship just mcfly
 cargo install --target-dir=/tmp/target \
     cargo-audit cargo-edit cargo-outdated cargo-deny cargo-update \
     cargo-lambda wasm-bindgen-cli wasm-pack \
-    ripgrep ripgrep_all exa bat fd-find difftastic mdbook onefetch jql sccache
+    ripgrep ripgrep_all exa bat fd-find difftastic mdbook onefetch sccache
 
 # generate bash completion scripts
 starship completions bash >~/bin/starship-completions.sh
 just --completions bash >~/bin/just-completions.sh
+
+# install nerd fonts
+curl https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/JetBrainsMono.zip -o JetBrainsMono.zip
+mkdir -p ~/.local/share/fonts
+unzip -n -d ~/.local/share/fonts JetBrainsMono.zip
 
 # install Deno
 curl -fsSL https://deno.land/x/install/install.sh | sh
