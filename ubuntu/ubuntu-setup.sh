@@ -9,16 +9,17 @@ sudo apt upgrade -y
 sudo apt dist-upgrade -y
 
 # install dependencies and tools
-sudo apt install -y libssl-dev subversion htop \
-    docker.io docker-compose postgresql-client-13 jq xclip \
-    python3-pip dotnet6 cmake libmagic-dev
+sudo apt install -y htop \
+    docker.io docker-compose jq xclip zip unzip \
+    python3-pip dotnet6 cmake gcc libmagic-dev libssl-dev pkg-config
 
 sudo usermod -aG docker $USER
 
 pip install git-remote-codecommit
 
-# install AWS CLI
+# install AWS CLI (pick one)
 curl https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip -o awscliv2.zip
+#curl https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip -o awscliv2.zip
 unzip awscliv2.zip
 sudo ./aws/install
 
@@ -34,7 +35,7 @@ cargo install --target-dir=/tmp/target starship just mcfly
 cargo install --target-dir=/tmp/target \
     cargo-audit cargo-edit cargo-outdated cargo-deny cargo-update \
     cargo-lambda wasm-bindgen-cli wasm-pack \
-    ripgrep ripgrep_all exa bat fd-find difftastic mdbook onefetch sccache
+    ripgrep exa bat fd-find difftastic mdbook onefetch sccache
 
 # generate bash completion scripts
 starship completions bash >~/bin/starship-completions.sh
