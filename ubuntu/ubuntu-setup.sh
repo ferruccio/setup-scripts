@@ -23,23 +23,21 @@ curl https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip -o awscliv2.zip
 unzip awscliv2.zip
 sudo ./aws/install
 
-# install nvm
-curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
-
 # install Rust, Cargo plugins & tools
 which rustc || curl --proto '=https' --tlsv1.2 -sSf -q https://sh.rustup.rs | sh -s -- -y
 source $HOME/.cargo/env
 
-cargo install --target-dir=/tmp/target starship just mcfly
+cargo install --target-dir=/tmp/target starship just mcfly fnm
 
 cargo install --target-dir=/tmp/target \
     cargo-audit cargo-edit cargo-outdated cargo-deny cargo-update \
     cargo-lambda wasm-bindgen-cli wasm-pack \
-    ripgrep exa bat fd-find difftastic mdbook onefetch sccache
+    ripgrep exa bat fd-find difftastic mdbook onefetch
 
 # generate bash completion scripts
 starship completions bash >~/bin/starship-completions.sh
 just --completions bash >~/bin/just-completions.sh
+fnm completions >~/bin/fnm-completions.sh
 
 # install nerd fonts
 curl https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/JetBrainsMono.zip -o JetBrainsMono.zip
@@ -88,8 +86,7 @@ To complete setup:
 
     * run after login:
         aws configure
-        nvm install 14
-        nvm install-latest-npm
+        fnm default 18
         npm install -g aws-cdk
 
 EOF
