@@ -34,10 +34,7 @@ cargo install --target-dir=/tmp/target \
     cargo-lambda cargo-cache wasm-bindgen-cli wasm-pack \
     ripgrep exa bat fd-find difftastic mdbook onefetch
 
-# generate bash completion scripts
-starship completions bash >~/bin/starship-completions.sh
-just --completions bash >~/bin/just-completions.sh
-fnm completions >~/bin/fnm-completions.sh
+mkdir ~/bin
 
 # install nerd fonts
 curl https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/JetBrainsMono.zip -o JetBrainsMono.zip
@@ -48,9 +45,15 @@ unzip -n -d ~/.local/share/fonts JetBrainsMono.zip
 curl -fsSL https://deno.land/x/install/install.sh | sh
 cat >>~/.profile <<EOF
 # add deno to path
-export DENO_INSTALL="/home/fgb/.deno"
+export DENO_INSTALL=~/.deno
 export PATH="\$DENO_INSTALL/bin:\$PATH"
 EOF
+
+# generate bash completion scripts
+starship completions bash >~/bin/starship-completions.sh
+just --completions bash >~/bin/just-completions.sh
+fnm completions >~/bin/fnm-completions.sh
+deno completions >~/bin/deno-completions.sh
 
 popd
 
