@@ -31,7 +31,7 @@ cargo install --target-dir=/tmp/target starship just mcfly fnm
 
 cargo install --target-dir=/tmp/target \
     cargo-audit cargo-edit cargo-outdated cargo-deny cargo-update \
-    cargo-lambda wasm-bindgen-cli wasm-pack \
+    cargo-lambda cargo-cache wasm-bindgen-cli wasm-pack \
     ripgrep exa bat fd-find difftastic mdbook onefetch
 
 # generate bash completion scripts
@@ -73,14 +73,11 @@ mkdir -p ~/.config
 # create .cargo/config.toml
 \cp config.toml ~/.cargo/config.toml
 
-# no longer cromulent; replaced by .editorconfig
-# create .omnisharp/omnisharp.json
-#mkdir -p ~/.omnisharp
-#\cp omnisharp.json ~/.omnisharp
-
 cat <<EOF
 
 To complete setup:
+
+    * sudo hostnamectl set-hostname *whatever*
 
     * reboot system
 
