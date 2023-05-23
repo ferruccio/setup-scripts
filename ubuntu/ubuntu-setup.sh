@@ -10,7 +10,7 @@ sudo apt dist-upgrade -y
 
 # install dependencies and tools
 sudo apt install -y htop \
-    docker.io docker-compose jq xclip zip unzip \
+    docker.io docker-compose jq xclip zip unzip keyutils cifs-utils \
     python3-pip dotnet6 cmake gcc libmagic-dev libssl-dev pkg-config
 
 sudo usermod -aG docker $USER
